@@ -5,8 +5,9 @@ export default function CardView({ users }) {
   return (
     <div className="cardview">
       {users &&
+        users.length > 0 &&
         users.map((item, index) => {
-          return <Card user={item.fields} />;
+          return item && item.fields ? <Card user={item.fields} /> : null;
         })}
     </div>
   );

@@ -38,3 +38,13 @@ p {
   color: brown;
   font-weight: bold;
 }
+.details_people {
+  position: fixed;
+  right: 0;
+  top: 0;
+  background: #fff;
+  height: 100%;
+  z-index: 100;
+  border: 1px solid #d7d7d7;
+  padding: 20px;
+}

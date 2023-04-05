@@ -2,23 +2,28 @@ import React, { useState, useEffect } from 'react';
 import { CardView } from '../components/';
 export default function Members({ title, users }) {
   const [search, setSearch] = useState('');
-  const [searchResult, setSearchResults] = useState(users);
-  // console.log(users);
+  const [searchResult, setSearchResults] = useState();
   const filterData = () => {
     return (
       users &&
       users.find((item) => {
         return (
           item.fields['[Full name] First Name'].toLowerCase() ===
-          'Manjunath'.toLowerCase()
+          search.toLowerCase()
         );
       })
     );
   };
   useEffect(() => {
-    setSearchResults([filterData()]);
-  }, [search, filterData]);
-  console.log(filterData());
+    if (search == '') {
+      setSearchResults(users);
+    } else {
+      let data = [filterData()];
+      if (data && data.length > 0 && data != undefined) {
+        setSearchResults(data);
+      }
+    }
+  }, [search, users]);
   return (
     <div>
       <h3>{title}</h3>
@@ -30,11 +35,15 @@ export default function Members({ title, users }) {
           onChange={(e) => setSearch(e.target.value)}
         />
       </div>
-      {searchResult && searchResult.length > 0 ? (
+      <div>Total:{searchResult && searchResult.length}</div>
+      <CardView users={searchResult} />
+      {/* {search !== '' && searchResult ? (
         <CardView users={searchResult} />
+      ) : search === '' ? (
+        <div>Hello world</div>
       ) : (
-        <div>Loading.....</div>
-      )}
+        <div>Loading...</div>
+      )} */}
     </div>
   );
 }
