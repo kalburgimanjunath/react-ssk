@@ -1,9 +1,27 @@
-import React, { useEffect, Component } from 'react';
-
+import React, { useEffect, Component, useRef } from 'react';
 import $ from 'jquery';
+import ReactToPrint from 'react-to-print';
+
 export default class MyTable extends Component {
+  constructor(props) {
+    super(props);
+    this.componentRef = React.createRef();
+  }
   jqueryCode = () => {
-    $('#newiframe1').contents().find('.back-button-wrapper').css({ margin: 0 });
+    // $('#newiframe1').contents().find('.back-button-wrapper').css({ margin: 0 });
+    // $(window).load(() => {
+    // $('#newiframe1').load(() => {
+    $('#newiframe1')
+      .contents()
+      .find('head')
+      .append(
+        $('<link/>', {
+          rel: 'stylesheet',
+          href: '../style1.css',
+          type: 'text/css',
+        })
+      );
+    // });
   };
 
   componentDidMount() {
@@ -11,10 +29,16 @@ export default class MyTable extends Component {
   }
 
   render() {
-    console.log(this.props.users);
     return (
       <div>
-        <table class="table table-bordered">
+        <ReactToPrint
+          trigger={() => <button>Print this out!</button>}
+          content={() => this.componentRef}
+        />
+        <table
+          class="table table-bordered"
+          ref={(el) => (this.componentRef = el)}
+        >
           <thead>
             <tr>
               <th scope="col">#</th>
