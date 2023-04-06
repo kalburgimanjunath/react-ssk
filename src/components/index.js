@@ -1,3 +1,4 @@
 import CardView from './cards/CardView';
 import Header from './header/Header';
-export { CardView, Header };
+import MyTable from './MyTable';
+export { CardView, Header, MyTable };

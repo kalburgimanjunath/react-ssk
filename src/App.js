@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import './style.css';
 import { CardView, Header } from './components/';
-import { Home, LandingPage, StaticPages, Members } from './pages/';
+import { Home, LandingPage, StaticPages, Members, AllMembers } from './pages/';
 import { Routes, Route } from 'react-router-dom';
 export default function App() {
   const [users, setUsers] = useState([]);
   useEffect(() => {
     fetch(
-      'https://api.airtable.com/v0/appPvZcQWqkcYW3YK/Sheet1?api_key=keyeNXyxxuuYJY19w'
+      'https://api.airtable.com/v0/appPvZcQWqkcYW3YK/Sheet1 2?api_key=keyeNXyxxuuYJY19w'
     )
       .then((res) => res.json())
       .then((data) => {
@@ -28,6 +28,7 @@ export default function App() {
         <Route path="/services" element={<StaticPages title="services" />} />
         <Route path="/products" element={<StaticPages title="products" />} />
         <Route path="/members" element={<Members users={users} />} />
+        <Route path="/all" element={<AllMembers users={users} />} />
         <Route path="/" exact element={<LandingPage />} />
       </Routes>
     </div>
