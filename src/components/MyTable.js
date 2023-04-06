@@ -64,8 +64,12 @@ export default class MyTable extends Component {
                         {item.fields['[Full name] First Name']
                           ? item.fields['[Full name] First Name']
                           : '' + ' '}
-                        {item.fields['[Full name] Middle Name'] + ' '}
-                        {item.fields['[Full name] Last Name'] + ' '}
+                        {item.fields['[Full name] Middle Name']
+                          ? item.fields['[Full name] Middle Name']
+                          : '' + ' '}
+                        {item.fields['[Full name] Last Name']
+                          ? item.fields['[Full name] Last Name']
+                          : '' + ' '}
                       </td>
                       <td>{item.fields['Address']}</td>
                       <td>{item.fields['Email']}</td>
@@ -77,7 +81,6 @@ export default class MyTable extends Component {
                           height="200"
                           width="200"
                           title="Iframe Example"
-                          style={{ top: '-200px' }}
                           id="newiframe1"
                         ></iframe>
                       </td>
