@@ -7,7 +7,7 @@ export default function App() {
   const [users, setUsers] = useState([]);
   useEffect(() => {
     fetch(
-      'https://api.airtable.com/v0/appPvZcQWqkcYW3YK/Sheet1 2?api_key=keyeNXyxxuuYJY19w'
+      'https://api.airtable.com/v0/appPvZcQWqkcYW3YK/Members?api_key=keyeNXyxxuuYJY19w'
     )
       .then((res) => res.json())
       .then((data) => {
@@ -19,7 +19,7 @@ export default function App() {
       });
   }, []);
   return (
-    <div className="text-center">
+    <div className="">
       <Header
         title="Ravinagar yuvak sangha - Shri Sahasrarjun Mitra Mandali (Gokul Road
         Hubli)"
@@ -29,7 +29,7 @@ export default function App() {
         <Route path="/products" element={<StaticPages title="products" />} />
         <Route path="/members" element={<Members users={users} />} />
         <Route path="/all" element={<AllMembers users={users} />} />
-        <Route path="/" exact element={<LandingPage />} />
+        <Route path="/" exact element={<Members users={users} />} />
       </Routes>
     </div>
   );
