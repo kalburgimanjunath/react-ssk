@@ -4,7 +4,7 @@ export default function Header({ title }) {
   return (
     <div>
       <h3>{title}</h3>
-      {/* <Navbar /> */}
+      <Navbar />
     </div>
   );
 }

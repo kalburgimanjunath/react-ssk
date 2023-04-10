@@ -28,8 +28,9 @@ export default function App() {
         <Route path="/services" element={<StaticPages title="services" />} />
         <Route path="/products" element={<StaticPages title="products" />} />
         <Route path="/members" element={<Members users={users} />} />
-        <Route path="/all" element={<AllMembers users={users} />} />
-        <Route path="/" exact element={<Members users={users} />} />
+        {/* <Route path="/all" element={<AllMembers users={users} />} /> */}
+        {/* <Route path="/" exact element={<Members users={users} />} /> */}
+        <Route path="/" exact element={<AllMembers users={users} />} />
       </Routes>
     </div>
   );
