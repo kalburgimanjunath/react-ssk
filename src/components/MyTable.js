@@ -83,7 +83,7 @@ export default class MyTable extends Component {
                           ? item.fields['[Full name] Last Name'] + ' '
                           : ' '}
                       </td>
-                      <td>{item.fields['Address'].toSentenseCase()}</td>
+                      <td>{item.fields['Address']}</td>
                       <td>{item.fields['Email']}</td>
 
                       {this.confidential ? (
