@@ -21,8 +21,8 @@ export default function App() {
   return (
     <div className="">
       <Header
-        title="Ravinagar yuvak sangha - Shri Sahasrarjun Mitra Mandali (Gokul Road
-        Hubli)"
+        title="Shri Sahasrarjun Mitra Mandali (Gokul Road
+        Hubli)."
       />
       <Routes>
         <Route path="/services" element={<StaticPages title="services" />} />

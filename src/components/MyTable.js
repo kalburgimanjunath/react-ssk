@@ -29,12 +29,12 @@ export default class MyTable extends Component {
   render() {
     return (
       <div>
-        <ReactToPrint
+        {/* <ReactToPrint
           trigger={() => <button>Print this out!</button>}
           content={() => this.componentRef}
-        />
+        /> */}
         <table
-          class="table table-bordered table-striped"
+          className="table table-bordered table-striped"
           ref={(el) => (this.componentRef = el)}
         >
           <thead>

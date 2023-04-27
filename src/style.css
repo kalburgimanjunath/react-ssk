@@ -130,3 +130,20 @@ and also iPads specifically.
     content: 'Family Details';
   }
 }
+
+.header-align {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  padding: 10px 20px;
+  /* align-items: center; */
+  /* text-align: end; */
+}
+.header-align .flex-start {
+  width: 50%;
+  text-align: left;
+}
+.header-align .flex-end {
+  width: 50%;
+  text-align: right;
+}

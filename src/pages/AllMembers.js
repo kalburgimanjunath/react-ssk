@@ -5,12 +5,14 @@ export default function AllMembers({ title, users }) {
   const [searchResult, setSearchResults] = useState();
 
   return (
-    <div>
-      <h3>{title}</h3>
-      <div>Total:{users && users.length}</div>
+    <div style={{ padding: '20px 20px' }}>
+      {/* <h3>{title}</h3> */}
+      <div>
+        <strong>Total:{users && users.length}</strong>
+      </div>
 
       {users && users.length > 0 ? (
-        <MyTable users={users} />
+        <MyTable users={users} confidential="true" />
       ) : (
         <div>No records</div>
       )}
