@@ -1,7 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import './style.css';
 import { CardView, Header } from './components/';
-import { Home, LandingPage, StaticPages, Members, AllMembers } from './pages/';
+import {
+  Home,
+  LandingPage,
+  StaticPages,
+  Members,
+  AllMembers,
+  SskApp,
+} from './pages/';
 import { Routes, Route } from 'react-router-dom';
 export default function App() {
   const [users, setUsers] = useState([]);
@@ -28,6 +35,7 @@ export default function App() {
         <Route path="/services" element={<StaticPages title="services" />} />
         <Route path="/products" element={<StaticPages title="products" />} />
         <Route path="/members" element={<Members users={users} />} />
+        <Route path="/sskapp" element={<SskApp />} />
         {/* <Route path="/all" element={<AllMembers users={users} />} /> */}
         {/* <Route path="/" exact element={<Members users={users} />} /> */}
         <Route path="/" exact element={<AllMembers users={users} />} />

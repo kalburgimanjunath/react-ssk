@@ -13,7 +13,7 @@ export default function Header({ title }) {
           height="100"
         />
       </div>
-      {/* <Navbar /> */}
+      <Navbar />
     </div>
   );
 }
